@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using webapiCodefirst.DAL;
 using webapiCodefirst.Models;
+using webapiCodefirst.ViewMoles;
 
 namespace webapiCodefirst.Controllers
 {
@@ -15,13 +16,18 @@ namespace webapiCodefirst.Controllers
         private AccountContext db = new AccountContext();
         private UnitOfWork unitOfWork = new UnitOfWork();
         [HttpGet]
-        [ActionName("GetSysRoles")]
-        public List<SysRole> Get()
+        [ActionName("GetUsers")]
+        public List<SysUser> GetUser()
+        {
+            var sysUsers = (unitOfWork.SysUserRepository.Get()).ToList();
+            return sysUsers;
+        }
+        [ActionName("GetRoles")]
+        public List<SysRole> GetRoles()
         {
             var sysRoles = (unitOfWork.SysRoleRepository.Get()).ToList();
             return sysRoles;
         }
-
 
     }
 }

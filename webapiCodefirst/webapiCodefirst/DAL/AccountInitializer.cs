@@ -24,6 +24,11 @@ namespace webapiCodefirst.DAL
                 new SysRole {RoleName ="administrators",RoleDec ="administrtors have full authorization to perform systea administration."},
                new SysRole {RoleName ="general uners",RoleDec ="general users an access the shared data they are suthorized for."}
             };
+            var sysUserRole = new List<SysUserRole>
+            {
+                new SysUserRole {ID=1,SysUserID=1,SysRoleID=1},
+               new SysUserRole {ID=2,SysUserID=2,SysRoleID=2}
+            };
             sysRole.ForEach(s => context.SysRoles.Add(s));
             context.SaveChanges();
         }

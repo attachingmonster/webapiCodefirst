@@ -5,6 +5,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 using webapiCodefirst.Models;
+using webapiCodefirst.ViewMoles;
 
 namespace webapiCodefirst.DAL
 {
@@ -18,6 +19,7 @@ namespace webapiCodefirst.DAL
         public DbSet<SysUser> SysUsers { get; set; }
         public DbSet<SysRole> SysRoles { get; set; }
         public DbSet<SysUserRole> SysUserRoles { get; set; }
+      
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 

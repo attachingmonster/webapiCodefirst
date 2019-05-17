@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using webapiCodefirst.Models;
 using webapiCodefirst.Repositories;
+using webapiCodefirst.ViewMoles;
 
 namespace webapiCodefirst.DAL
 {
@@ -14,6 +15,7 @@ namespace webapiCodefirst.DAL
         private GenericRepository<SysUser> sysUserRepository;
         private GenericRepository<SysRole> sysRoleRepository;
         private GenericRepository<SysUserRole> sysUserRoleRepository;
+       
         public GenericRepository<SysUser> SysUserRepository
         {
             get
@@ -47,6 +49,8 @@ namespace webapiCodefirst.DAL
                 return sysUserRoleRepository;
             }
         }
+        
+
         #region Save & Dispose
         public void Save()
         {
@@ -54,6 +58,7 @@ namespace webapiCodefirst.DAL
         }
 
         private bool disposed = false;
+      
 
         protected virtual void Dispose(bool disposing)
         {
